@@ -1,0 +1,39 @@
+ <!-- <div class="container">
+        <ul id="js-list">
+            <li>Option 1: link to app, website can use scheme as URL like ex. href="myapp://"</li>
+            <li><a href="line://">Click to open LINE</a></li>
+        </ul>
+
+    </div>
+    <script>
+        const getDeviceOS = () =>{
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if (/windows phone/i.test(userAgent)) {
+                return "Windows Phone";
+            }
+
+            if (/android/i.test(userAgent)) {
+                return "Android";
+            }
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return "iOS";
+            }
+
+            return "unknown";
+        }
+        const setStoreLink = () =>{
+            let os = getDeviceOS();
+            let list = document.getElementById("js-list")
+            let url = os==="Android"?"https://play.google.com/store/apps/details?id=jp.naver.line.android":"https://itunes.apple.com/app/line/id443904275";
+            let li = document.createElement("li");
+            let a = document.createElement("a");
+            a.textContent = "Download App by "+os;
+            a.setAttribute("href",url);
+            li.appendChild(a);
+            list.appendChild(li);
+        }
+        window.onload = setStoreLink();
+        
+        
+    </script> -->

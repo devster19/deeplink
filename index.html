@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Deep Link Example</title>
+    <style>
+        body,html{
+            font-family: 'Roboto', sans-serif;
+            margin:0;
+            padding:0;
+        }
+        .header{
+            background: rgb(62,110,98);
+            background: linear-gradient(113deg, rgba(62,110,98,1) 0%, rgba(34,158,12,1) 59%);
+            color:#fff;
+            font-weight: bold;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .header h1{
+            font-size: 1.4em;
+        }
+        .container{
+            padding:10px;
+        }
+        ul,li,a{
+            text-decoration: none;
+            padding:0;
+        }
+        li{
+            margin:10px auto;
+            color: black;
+            font-size: 18;
+        }
+        a{
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>EASY CHAT APP</h1>
+    </div>
+   
+    
+    <iframe id="l" width="1" height="1" style="visibility:hidden"></iframe>
+    <script type="text/javascript">
+        const getDeviceOS = () =>{
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if (/windows phone/i.test(userAgent)) {
+                return "Windows Phone";
+            }
+
+            if (/android/i.test(userAgent)) {
+                return "Android";
+            }
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return "iOS";
+            }
+
+            return "unknown";
+        }
+        window.onload = function() {
+            let os = getDeviceOS();
+            let url = os==="Android"?"https://play.google.com/store/apps/details?id=jp.naver.line.android":"https://itunes.apple.com/app/line/id443904275";
+            document.getElementById("l").src = "line://";
+            setTimeout(function() {               
+                window.location = os;
+            }, 500);
+        };
+    </script>
+</body>
+</html>
