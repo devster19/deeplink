@@ -42,7 +42,7 @@
 </head>
 <body>
     <div class="header">
-        <h1>EASY CHAT APP</h1>
+        <h1>EASY CHAT APP v1</h1>
     </div>
    
     
@@ -64,24 +64,24 @@
 
             return "unknown";
         }
+        /*
         window.onload = function() {
             let os = getDeviceOS();
             let url = os==="Android"?"https://play.google.com/store/apps/details?id=jp.naver.line.android":"https://itunes.apple.com/app/line/id443904275";
-            // document.getElementById("l").src = "line://";
-            // setTimeout(function() {               
-            //     window.location = url;
-            // }, 500);
-
-
+            document.getElementById("l").src = "line://";
+            setTimeout(function() {               
+                window.location = os;
+            }, 500);
+        };*/
+        function openApp(){
             var now = new Date().valueOf();
             setTimeout(function () {
                 if (new Date().valueOf() - now > 100) return;
-                window.location = url;
-            }, 1000);
+                window.location = "https://play.google.com/store/apps/details?id=jp.naver.line.android";
+            }, 25);
             window.location = "line://";
-            
-        };
-        
+        }
+        window.onload = openApp();
     </script>
 </body>
 </html>
