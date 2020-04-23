@@ -44,6 +44,7 @@
     <div class="header">
         <h1>EASY CHAT APP v1</h1>
     </div>
+    <a href="line://">LINE</a>
    
     
     <iframe id="l" width="1" height="1" style="visibility:hidden"></iframe>
@@ -77,9 +78,9 @@
             var now = new Date().valueOf();
             setTimeout(function () {
                 if (new Date().valueOf() - now > 100) return;
-                window.location = "https://play.google.com/store/apps/details?id=jp.naver.line.android";
+                //window.location = "https://play.google.com/store/apps/details?id=jp.naver.line.android";
             }, 25);
-            window.location = "eveandboy://";
+            window.location = "line://";
         }
         window.onload = openApp();
     </script>
