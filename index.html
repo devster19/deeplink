@@ -45,7 +45,7 @@
         <h1>EASY CHAT APP v1.1</h1>
     </div>
     <a href="line://">LINE</a>
-   <button style="width:150px;height:50px;margin:20px" onclick="openLine();">OPEN LINE</button>
+   <button style="width:150px;height:50px;margin:20px" onclick="openLine();">OPEN LINE 1</button>
     
     <iframe id="l" width="1" height="1" style="visibility:hidden"></iframe>
     <script type="text/javascript">
@@ -84,7 +84,8 @@
         }
         function openLine(){
             alert(1);
-            window.ReactNativeWebView.postMessage("Hello React Native!");
+            //window.ReactNativeWebView.postMessage("Hello React Native!");
+             window.postMessage(JSON.stringify("open"),"*");
         }
         //window.onload = openApp();
     </script>
